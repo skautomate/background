@@ -2,9 +2,21 @@
 <html>
   <head>
     <title>Ambient Background</title>
-    <script src="ambient-background.js"></script> <!-- Replace with your actual JS file -->
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+        background: black;
+      }
+      canvas {
+        display: block;
+      }
+    </style>
+    <script src="ambient-background.js"></script>
   </head>
   <body>
-    <h1>Hello from GitHub Pages!</h1>
+    <canvas id="ambient-canvas"></canvas>
   </body>
 </html>
