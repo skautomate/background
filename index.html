@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ambient Background</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="demo5.css" />
+    <script>
+      document.documentElement.className = "js";
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement("style");
+        t.innerHTML = "root: { --tmp-var: bold; }";
+        document.head.appendChild(t);
+        e = !!(
+          window.CSS &&
+          window.CSS.supports &&
+          window.CSS.supports("font-weight", "var(--tmp-var)")
+        );
+        t.parentNode.removeChild(t);
+        return e;
+      };
+      supportsCssVars() ||
+        alert(
+          "Please view this demo in a modern browser that supports CSS Variables."
+        );
+    </script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body class="demo-5">
+    <!-- Just canvas background container -->
+    <div class="content content--canvas"></div>
+
+    <!-- Required scripts -->
+    <script src="noise.min.js"></script>
+    <script src="util.js"></script>
+    <script src="pipeline.js"></script>
+  </body>
+</html>
